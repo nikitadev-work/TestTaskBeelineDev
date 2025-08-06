@@ -1,0 +1,13 @@
+2025/08/06 22:31:26 Logger configured successfully
+2025/08/06 22:31:26 Config read successfully
+2025/08/06 22:31:26 Listening on port 8080
+2025/08/06 22:31:30 XmlConverterHandler serving the request
+2025/08/06 22:31:30 Processing users
+2025/08/06 22:31:30 Finished users processing
+2025/08/06 22:31:30 Creating the new request
+2025/08/06 22:31:30 [{"id":"2","full_name":"Мария Петрова","email":"maria@example.com","age_group":"от 25 до 35"},{"id":"1","full_name":"Иван Иванов","email":"ivan@example.com","age_group":"от 25 до 35"}]
+2025/08/06 22:31:30 Sending the request
+2025/08/06 22:31:30 The external service is not responding: retrying...
+2025/08/06 22:31:30 The external service is not responding: retrying...
+2025/08/06 22:31:35 The external service is not responding: retrying...
+2025/08/06 22:31:45 Error while sending request: Post "http://localhost:8081/users": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.
