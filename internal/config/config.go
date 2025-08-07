@@ -17,6 +17,7 @@ type Config struct {
 	LogFile          string
 	NumOfWorkers     int
 	Timeout          time.Duration
+	ShutdownTimeout  time.Duration
 }
 
 // Load загружает конфигурацию из переменных окружения
@@ -46,6 +47,13 @@ func Load() Config {
 		log.Println("TIMEOUT env variable is incorrect")
 	}
 
+	shutdownTimeoutStr := getEnv("SHUTDOWN_TIMEOUT", "10s")
+	shutdownTimeout, err := time.ParseDuration(shutdownTimeoutStr)
+	if err != nil {
+		shutdownTimeout = 10 * time.Second
+		log.Println("SHUTDOWN_TIMEOUT env variable is incorrect")
+	}
+
 	if authKey == "" {
 		log.Fatal("AUTH_KEY is required in configuration")
 	}
@@ -58,6 +66,7 @@ func Load() Config {
 		LogFile:          logFile,
 		NumOfWorkers:     numOfWorkers,
 		Timeout:          timeout,
+		ShutdownTimeout:  shutdownTimeout,
 	}
 }
 
