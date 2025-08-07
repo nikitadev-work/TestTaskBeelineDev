@@ -35,7 +35,7 @@ func (c Converter) ConvertUser(user models.UserInput) (models.UserOutput, error)
 //   - Более 35 лет → "старше 35"
 func determineAgeGroup(age int) (string, error) {
 	if age < 1 || age > 150 {
-		return "", errors.New("Invalid age")
+		return "", errors.New("invalid age")
 	}
 
 	if age < 25 {
